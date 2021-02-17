@@ -34,14 +34,61 @@
             .centered {
                 text-align: center;
             }
+
+            section.posts {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .post {
+                flex-basis: 350px;
+                margin: 1rem;
+                padding: 1rem;
+                border-radius: .5rem;
+                box-shadow:
+                rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+                rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            }
+
+            .post h2 {
+                margin-bottom: 1rem;
+            }
+
+            nav {
+                padding: 2rem 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+            }
+            nav a {
+                text-decoration: none;
+                color: inherit;
+                text-transform: uppercase;
+                border-bottom: 3px solid transparent;
+            }
+            nav a.active {
+                border-bottom: 3px solid black;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
         <header class="centered">
             <h1>Blog</h1>
         </header>
-        <section>
-            <h2>posts</h2>
+        <nav>
+            <a href="{{ route('home') }}" class="{{ Route::currentRouteName() === 'home' ? 'active' : '' }}">Home</a>
+            <a href="{{ route('about') }}" class="{{ Route::currentRouteName() === 'about' ? 'active' : '' }}">About</a>
+            <a href="{{ route('posts') }}" class="{{ Route::currentRouteName() === 'posts' ? 'active' : '' }}">Posts</a>
+        </nav>
+        <section class="posts">
+            @foreach ($posts as $post)
+            <div class="post">
+                <h2> {{ $post->title }} </h2>
+                <p> {{ $post->body }} </p>
+            </div>
+            @endforeach
         </section>
     </body>
 </html>

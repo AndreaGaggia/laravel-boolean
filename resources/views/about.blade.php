@@ -34,14 +34,37 @@
             .centered {
                 text-align: center;
             }
+
+            nav {
+                padding: 2rem 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+            }
+            nav a {
+                text-decoration: none;
+                color: inherit;
+                text-transform: uppercase;
+                border-bottom: 3px solid transparent;
+            }
+            nav a.active {
+                border-bottom: 3px solid black;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
         <header class="centered">
             <h1>Blog</h1>
         </header>
-        <section>
-            <h2>about</h2>
+        <nav>
+            <a href="{{ route('home') }}" class="{{ Route::currentRouteName() === 'home' ? 'active' : '' }}">Home</a>
+            <a href="{{ route('about') }}" class="{{ Route::currentRouteName() === 'about' ? 'active' : '' }}">About</a>
+            <a href="{{ route('posts') }}" class="{{ Route::currentRouteName() === 'posts' ? 'active' : '' }}">Posts</a>
+        </nav>
+        <section class="centered">
+            <h2>about page</h2>
         </section>
     </body>
 </html>

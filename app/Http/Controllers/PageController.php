@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+
 class PageController extends Controller
 {
     public function home()
@@ -16,6 +18,7 @@ class PageController extends Controller
 
     public function posts()
     {
-        return view('posts');
+        $posts = Post::all();
+        return view('posts', compact('posts'));
     }
 }
