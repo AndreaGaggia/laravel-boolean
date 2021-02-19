@@ -49,7 +49,7 @@
                 border-bottom: 3px solid transparent;
             }
             nav a.active {
-                border-bottom: 3px solid black;
+                border-bottom: 3px solid #636b6f;
                 font-weight: bold;
             }
         </style>
@@ -65,6 +65,9 @@
         </nav>
         <section class="centered">
             <h2>about page</h2>
+            <div class="alert alert-primary" role="alert">
+                This is a primary alert—check it out!
+            </div>          
         </section>
     </body>
 </html>

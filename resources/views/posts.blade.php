@@ -41,7 +41,7 @@
             }
 
             .post {
-                flex-basis: 350px;
+                flex-basis: 30%;
                 margin: 1rem;
                 padding: 1rem;
                 border-radius: .5rem;
@@ -68,7 +68,7 @@
                 border-bottom: 3px solid transparent;
             }
             nav a.active {
-                border-bottom: 3px solid black;
+                border-bottom: 3px solid #636b6f;
                 font-weight: bold;
             }
         </style>

@@ -49,7 +49,7 @@
                 border-bottom: 3px solid transparent;
             }
             nav a.active {
-                border-bottom: 3px solid black;
+                border-bottom: 3px solid #636b6f;
                 font-weight: bold;
             }
         </style>
